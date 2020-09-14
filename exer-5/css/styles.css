@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+.col{
+    font-family: 'Lato';
+    color: #ffffff;
+    text-align: center;
+    height: 100vw;
+    width: 20%;
+    margin-top: 8px;
+    margin-left: 2px;
+}
+
+.col:nth-child(1) {
+    background: #244F75;
+}
+.col:nth-child(2) {
+    background: #60BFBF;
+}
+.col:nth-child(3) {
+    background:#8C4B7E;
+}
+.col:nth-child(4) {
+    background: #F8BB44;
+}
+.col:nth-child(5) {
+    background: #F24B4B;
+}
