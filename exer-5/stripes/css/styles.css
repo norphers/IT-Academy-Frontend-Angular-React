@@ -1,0 +1,186 @@
+/* GENERAL */
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 350%;
+  font-weight: 300;
+}
+
+/* ROW - STRIPES */
+.row {
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  font-family: "Lato";
+  color: #ffffff;
+}
+
+/* COLUMN - SINGLE STRIPE */
+.column {
+  width: 14.28%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: absolute;
+}
+
+/* modificador de posición de cada 'stripe' { :nth-child(n) }. Este está relacionado con el { position: absolute } del .stripe. */
+.column:nth-child(1) {
+  left: 0%;
+}
+.column:nth-child(2) {
+  left: 14.28%;
+}
+.column:nth-child(3) {
+  left: 28.56%;
+}
+.column:nth-child(4) {
+  left: 42.84%;
+}
+.column:nth-child(5) {
+  left: 57.12%;
+}
+.column:nth-child(6) {
+  left: 71.4%;
+}
+.column:nth-child(7) {
+  left: 85.68%;
+}
+
+.content {
+  display: flex;
+  min-height: 100vh;
+  align-items: center; /* centra en base al eje vertical */
+  justify-content: center; /* centra en base al eje horizontal */
+  margin-right: 2.5px;
+}
+/* modificador del color del background de 'stripe'. */
+/*Crear la ruta padre-hijo { .stripes -> .stripe:nth-child() -> .stripe_content -> .stripe_title } */
+.column:nth-child(1) .content {
+  background: #82aaca;
+  animation: column1 2s;
+}
+.column:nth-child(2) .content {
+  background: #779cbb;
+  animation: column2 2s;
+}
+.column:nth-child(3) .content {
+  background: #6c8eaa;
+  animation: column3 2s;
+}
+.column:nth-child(4) .content {
+  background: #627f99;
+  animation: column4 2s;
+}
+.column:nth-child(5) .content {
+  background: #5a748b;
+  animation: column5 2s;
+}
+.column:nth-child(6) .content {
+  background: #516b80;
+  animation: column6 2s;
+}
+.column:nth-child(7) .content {
+  background: #4e667a;
+  animation: column7 2s;
+}
+
+.column .content::before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: " ";
+  background: #ffffff;
+  opacity: 0.1;
+  transform: skew(30deg);
+}
+
+.column .content:hover::before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: " ";
+  background: #ffffff;
+  opacity: 0.1;
+  transform: skew(0deg);
+}
+
+/* ANIMATE */
+
+@keyframes column1 {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes column2 {
+  0% {
+    -webkit-transform: translate3d(100%, -100%, 0);
+    transform: translate3d(100%, -100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes column3 {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes column4 {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes column5 {
+  0% {
+    -webkit-transform: translate3d(-100%, 100%, 0);
+    transform: translate3d(-100%, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes column6 {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes column7 {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
