@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      //exercise 1
+      console.log("Hello Wolrd!");
+
+      //exercise 2
+      alert("My name is John");
+
+      //exercise 3
+      const name = "John";
+      const surname = "Doe";
+      console.log(`${name}, ${surname}`);
+
+      //exercise 4
+      let num1 = 34;
+      let num2 = 56;
+      let result = num1 + num2;
+      console.log(`${num1} + ${num2} = ${result}`);
+
+      //exercise 5
+      let score = 5;
+      if (score >= 5) alert("You've passed the exam");
+      else alert("You haven't passed the exam");
+
+      //exercise 6
+      const string = "I have a blue car";
+      const replace1 = /blue/gi;
+      const replace2 = /a/gi;
+      console.log(string.replace(replace1, "green"));
+      console.log(string.replace(replace2, "i"));
+
+      //exercise 7
+      let objects = ["taula", "cadira", "ordinador", "libreta"];
+      for (var i = 0; i < objects.length; i++)
+        console.log(
+          "the object " + objects[i] + " is in the memory location " + i + ".",
+        );
+
+      //exercise 8
+      let num1;
+      let num2;
+      let operator;
+      let result;
+
+      function calculate(operator, num1, num2) {
+        if (operator == "addition") result = num1 + num2;
+        else if (operator == "subtraction") result = num1 - num2;
+        else if (operator == "multiplication") result = num1 * num2;
+        else if (operator == "division") result = num1 / num2;
+        else
+          console.log(
+            "operator value nust be: addition, substraction, multiplication or division",
+          );
+        return console.log(result);
+      }
+      
+      calculate("multiplication", 10, 24);
+
+    </script>
+  </body>
+</html>
