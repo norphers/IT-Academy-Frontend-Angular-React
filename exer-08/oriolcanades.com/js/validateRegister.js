@@ -1,87 +1,104 @@
 const form = document.getElementById('registerFormId');
 
-function registerValidate() {
-	var acumErrores = 0;
+function registerValidation() {
 	
+	var errorAccount = 0;
+
 	form.classList.remove('is-invalid');
 	
-	//var inputEmail = document.forms["myForm"]["inputEmail"];
-
-    var inputName = document.forms["registerForm"]["inputName"];
+    var inputFirstName = document.forms["registerForm"]["inputFirstName"];
     var inputLastName = document.forms["registerForm"]["inputLastName"];
-
 	var inputEmail = document.getElementById('inputEmail');
-    var inputPassword = document.forms["myForm"]["inputPassword"];
-    
-    var inputAddress = document.forms["myForm"]["inputAddress"];
-    var inputAddress2 = document.forms["myForm"]["inputAddress2"];
-	var inputProvince = document.forms["myForm"]["inputProvince"];
-	var inputCity = document.forms["myForm"]["inputCity"];
-	var inputZip = document.forms["myForm"]["inputZip"];
-	var gridCheck = document.forms["myForm"]["gridCheck"];
+    var inputPassword = document.forms["registerForm"]["inputPassword"];
+    var inputAddress = document.forms["registerForm"]["inputAddress"];
+	var inputProvince = document.forms["registerForm"]["inputProvince"];
+	var inputCity = document.forms["registerForm"]["inputCity"];
+	var inputZip = document.forms["registerForm"]["inputZip"];
+	var gridCheck = document.forms["registerForm"]["gridCheck"];
 
-	if(inputEmail.value == "") {
-		inputEmail.classList.add("is-invalid");
-		document.getElementById("errorEmail").textContent = "Es campo es obligatorio";
-        acumErrores ++;
-    }else if(!validar_email(inputEmail.value)){
-		inputEmail.classList.add("is-invalid");
-		document.getElementById("errorEmail").textContent = "El email no cumple el formato";
-		acumErrores ++;
+	if (inputFirstName.value == "") 
+	{
+		inputFirstName.classList.add("is-invalid");
+		document.getElementById("errorFirstName").textContent = "First name is a required field";
+		errorAccount ++;
 	}
 
-    if(inputPassword.value == "") {
+	if (inputLastName.value == "") 
+	{
+		inputLastName.classList.add("is-invalid");
+		document.getElementById("errorLastName").textContent = "Last name is a required field";
+		errorAccount ++;
+	}
+
+	if (inputEmail.value == "") 
+	{
+		inputEmail.classList.add("is-invalid");
+		document.getElementById("errorEmail").textContent = "Email is a required field";
+        errorAccount ++;
+	} 
+	else if (!validate_email(inputEmail.value))
+	{
+		inputEmail.classList.add("is-invalid");
+		document.getElementById("errorEmail").textContent = "Email format error";
+		errorAccount ++;
+	}
+
+	if (inputPassword.value == "") 
+	{
 		inputPassword.classList.add("is-invalid");
-		document.getElementById("errorPassword").textContent = "Es campo es obligatorio";
-		acumErrores ++;
+		document.getElementById("errorPassword").textContent = "Password is a required field";
+		errorAccount ++;
 	}
 	
-    if(inputAddress.value == "") {
+	if (inputAddress.value == "") 
+	{
 		inputAddress.classList.add("is-invalid");
-		document.getElementById("errorAddress").textContent = "Es campo es obligatorio";
-		acumErrores ++;
+		document.getElementById("errorAddress").textContent = "Address is a required field";
+		errorAccount ++;
 	}
 
-    if(inputProvince.value == "") {
+	if (inputProvince.value == "") 
+	{
 		inputProvince.classList.add("is-invalid");
-		document.getElementById("errorProvince").textContent = "La provincia es obligatoria";
-		acumErrores ++;
+		document.getElementById("errorProvince").textContent = "Province is a required field";
+		errorAccount ++;
 	}
 	
-	if(inputCity.value == "") {
+	if (inputCity.value == "") 
+	{
 		inputCity.classList.add("is-invalid");
-		document.getElementById("errorCity").textContent = "Falta la ciutat";
-		acumErrores ++;
+		document.getElementById("errorCity").textContent = "City is a required field";
+		errorAccount ++;
 	}
 	
-	if(inputZip.value == "" || inputZip.length!=5) {
+	if (inputZip.value == "" || inputZip.length!=5) 
+	{
 		inputZip.classList.add("is-invalid");
-		document.getElementById("errorZip").textContent = "El codi postal no compleix els requisitis";
-		acumErrores ++;
+		document.getElementById("errorZip").textContent = "Zip code is a required field and must have 5 numbers";
+		errorAccount ++;
 	}
 	
-	if(!gridCheck.checked) {
+	if (!gridCheck.checked) 
+	{
 		gridCheck.classList.add("is-invalid");
-		document.getElementById("errorCheck").textContent = "Acepta las bases";
-		acumErrores ++;
+		document.getElementById("errorCheck").textContent = "Accept Privacy Policy";
+		errorAccount ++;
 	}
-
-    if (acumErrores > 0){
+	
+	if (errorAccount > 0) {
         return false;
-    }else{
-		return true;
+	} else {
+		return false;
 	}
 }
 
-
-
 form.addEventListener('blur', (event) => {
 	console.log(event);
-	if(event.target.value!='') event.target.classList.remove('is-invalid');
-    //registerValidate();
+	if (event.target.value!='') event.target.classList.remove('is-invalid');
 }, true);
 
-function validar_email(email) {
+function validate_email(email) 
+{
 	var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	return regex.test(email) ? true : false;
 }
