@@ -1,0 +1,37 @@
+body{
+    background: slategray;
+}
+
+.rating {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    direction: rtl;
+}
+
+.rating span{
+    font-size: 40px;
+    color: black;
+    transition: 0.3s all;
+}
+
+.rating span:hover{
+    color:#f1c40f;
+}
+
+.s1:hover ~ span {
+    color:#f1c40f;
+}
+.s2:hover ~ span {
+    color:#f1c40f;
+}
+.s3:hover ~ span {
+    color:#f1c40f;
+}
+.s4:hover ~ span {
+    color:#f1c40f;
+}
+.s5:hover ~ span {
+    color:#f1c40f;
+}
