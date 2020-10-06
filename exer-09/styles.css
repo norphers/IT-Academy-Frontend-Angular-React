@@ -1,0 +1,25 @@
+body { background: #708090; }
+
+.rating-group {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    direction: rtl; 
+}
+  
+.rating-group > input {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+.rating-group > input:checked ~ label { color: #FFD700; }
+  
+.rating-group > label {
+    cursor: pointer;
+    font-size: 40px;
+    color: #D3D3D3;
+    transition: 0.3s all;
+}
+
+.rating-group > label:hover, .rating-group > label:hover ~ label { color: #FFD700; }
