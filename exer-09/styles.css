@@ -1,37 +1,25 @@
-body{
-    background: slategray;
-}
+body { background: #708090; }
 
-.rating {
+.rating-group {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    direction: rtl;
+    direction: rtl; 
+}
+  
+.rating-group > input {
+    position: absolute;
+    clip: rect(0,0,0,0);
 }
 
-.rating span{
+.rating-group > input:checked ~ label { color: #FFD700; }
+  
+.rating-group > label {
+    cursor: pointer;
     font-size: 40px;
-    color: black;
+    color: #D3D3D3;
     transition: 0.3s all;
 }
 
-.rating span:hover{
-    color:#f1c40f;
-}
-
-.s1:hover ~ span {
-    color:#f1c40f;
-}
-.s2:hover ~ span {
-    color:#f1c40f;
-}
-.s3:hover ~ span {
-    color:#f1c40f;
-}
-.s4:hover ~ span {
-    color:#f1c40f;
-}
-.s5:hover ~ span {
-    color:#f1c40f;
-}
+.rating-group > label:hover, .rating-group > label:hover ~ label { color: #FFD700; }

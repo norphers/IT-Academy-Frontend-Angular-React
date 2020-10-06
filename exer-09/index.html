@@ -5,31 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 9</title>
-    <!-- FONT AWESOME -->
-    <link rel=”stylesheet” href=”tucarpeta/css/font-awesome.min.css“>
-    <!-- Bootstrap -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <!-- CSS -->
 	<link href="./styles.css" rel="stylesheet">
 </head>
 
 <body>
 
+    <ul class="rating-group" id="rating-group">
+        <input type="radio" id="star5" name="rating" value="5"/><label id="star" for="star5"><ion-icon name="star"></ion-icon></label>
+        <input type="radio" id="star4" name="rating" value="4"/><label id="star" for="star4"><ion-icon name="star"></ion-icon></label>
+        <input type="radio" id="star3" name="rating" value="3"/><label id="star" for="star3"><ion-icon name="star"></ion-icon></label>
+        <input type="radio" id="star2" name="rating" value="2"/><label id="star" for="star2"><ion-icon name="star"></ion-icon></label>
+        <input type="radio" id="star1" name="rating" value="1"/><label id="star" for="star1"><ion-icon name="star"></ion-icon></label>
+    </ul>
 
-    <div class="rating">
-        <span class="s1" onclick="starRange('0')"><ion-icon id="star1" name="star"></ion-icon></i></span>
-        <span class="s2" onclick="starRange('1')"><ion-icon id="star2" name="star"></ion-icon></i></span>
-        <span class="s3" onclick="starRange('2')"><ion-icon id="star3" name="star"></ion-icon></i></span>
-        <span class="s4" onclick="starRange('3')"><ion-icon id="star4" name="star"></ion-icon></i></span>
-        <span class="s5" onclick="starRange('4')"><ion-icon id="star5" name="star"></ion-icon></i></span>
-    </div>
-
-
-    <!--scripts-->
+    <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <!-- ionic icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    <!-- javascript -->
     <script src="app.js"></script>
 
 </body>
